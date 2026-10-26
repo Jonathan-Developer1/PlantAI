@@ -1,63 +1,66 @@
 # 3 Modelagem e diagramas arquiteturais: (Modelo C4)
-Descrevam brevemente a modelagem da solução apresentando seu diagrama geral com as camadas da arquitetura projetada de forma simples e direta.
 
-Exemplo:
+A modelagem arquitetural do PlantAÍ foi definida utilizando o modelo C4, que permite representar o sistema em diferentes níveis de abstração. A solução é organizada em camadas, contemplando a interação com os usuários, a aplicação responsável pelo processamento das solicitações, os serviços de inteligência artificial e o banco de dados PostgreSQL.
+
+Essa organização permite separar as responsabilidades do sistema, facilitando a manutenção, a integração entre os componentes e a evolução das funcionalidades de identificação de plantas e análise de possíveis doenças.
 
 <p align="center">
-  <img src="./images/solucao_geral.png" alt="Diagrama de Contexto"> <br>
-  Figura 1: Visão Geral da Solução (camadas)
+  <img src="./images/solucao_geral.png" alt="Diagrama geral da arquitetura do PlantAÍ"><br>
+  Figura 1: Visão Geral da Solução (camadas).
 </p>
-
-
-
 
 ## 3.1 Nível 1: Diagrama de Contexto
-Apresente um diagrama mostrando seu sistema como uma caixa no centro cercada por seus usuários e outros sistemas com os quais ele interage. Demonstre uma visão geral da paisagem do sistema. O foco deve estar nas pessoas (atores, papéis, personas, etc.) e sistemas de software, em vez de tecnologias, protocolos e outros detalhes de baixo nível, conforme figura 2. 
 
-Obs: Este é o tipo de diagrama que se pode mostrar para pessoas não técnicas.
+O diagrama de contexto apresenta uma visão geral do PlantAÍ, destacando os usuários e os sistemas externos que podem interagir com a solução. Os principais usuários são agricultores e técnicos agrícolas, que poderão utilizar o aplicativo para enviar imagens de plantas, consultar possíveis doenças e obter informações sobre prevenção e tratamento.
+
+O PlantAÍ atua como o sistema central, recebendo as solicitações dos usuários e disponibilizando os resultados das análises. Para auxiliar na identificação de espécies vegetais e na análise de possíveis doenças, a solução poderá integrar serviços externos de inteligência artificial, conforme a arquitetura definida para o projeto.
 
 <p align="center">
-  <img src="./images/diagrama_contexto.png" alt="Diagrama de Contexto"><br>
-  Figura 2: Diagrama de Contexto  (fonte: https://c4model.com/)
+  <img src="./images/diagrama_contexto.png" alt="Diagrama de Contexto do PlantAÍ"><br>
+  Figura 2: Diagrama de Contexto.
 </p>
-
-Escreva aqui uma breve explicação sobre o diagrama da Figura 2.
-
 
 ## 3.2 Nível 2: Diagrama de Contêiner
-Apresente a forma de alto nível da arquitetura de software e como as responsabilidades são distribuídas por ela. Mostre as principais opções de tecnologia e como os contêineres se comunicam entre si. É um diagrama simples e focado em tecnologia de alto nível que é útil tanto para desenvolvedores de software quanto para equipes de suporte/operações (figura 3).
+
+O diagrama de contêiner apresenta a arquitetura de alto nível do PlantAÍ e a distribuição das responsabilidades entre seus principais elementos. A solução prevê um aplicativo mobile para interação com o usuário, um backend para processamento das solicitações e aplicação das regras de negócio, além de um banco de dados PostgreSQL para armazenamento das informações.
+
+O aplicativo mobile será responsável pelo envio das imagens e pela apresentação dos resultados. O backend coordenará o processamento das solicitações, a integração com os serviços de inteligência artificial e a comunicação com o banco de dados. O PostgreSQL armazenará informações dos usuários, consultas realizadas e referências às imagens enviadas.
+
+A arquitetura também prevê a integração com ferramentas de processamento de imagens e modelos de inteligência artificial para auxiliar na identificação das espécies vegetais e na detecção de possíveis doenças. Os componentes externos serão integrados conforme a implementação do projeto.
 
 <p align="center">
-  <img src="./images/diagrama_conteiner.png" alt="Diagrama de Contêiner"><br>
-  Figura 3 – Diagrama de Contêiner  (fonte: https://c4model.com/)
+  <img src="./images/diagrama_conteiner.png" alt="Diagrama de Contêiner do PlantAÍ"><br>
+  Figura 3: Diagrama de Contêiner.
 </p>
-
-Escreva aqui uma breve explicação sobre o diagrama da Figura 3.
-
 
 ## 3.3 Nível 3: Diagrama de Componentes
-Apresente a composição do contêiner em vários "componentes". O que são cada um desses componentes, suas responsabilidades e os detalhes de tecnologia/implementação.
 
-O diagrama de componentes da aplicação, indica, os elementos da arquitetura e as interfaces entre eles. Liste os estilos/padrões arquiteturais utilizados e faz uma descrição sucinta dos componentes indicando o papel de cada um deles dentro da arquitetura/estilo/padrão arquitetural. Indique também quais componentes serão reutilizados (navegadores, SGBDs, middlewares, etc), quais componentes serão adquiridos por serem proprietários e quais componentes precisam ser desenvolvidos, conforme figura 4.
+O diagrama de componentes detalha a organização interna da aplicação e as responsabilidades de seus principais módulos. A arquitetura proposta utiliza a separação em camadas, distinguindo a interface do usuário, a lógica de negócio, a integração com serviços externos e a persistência dos dados.
 
+Os componentes previstos incluem o módulo de gerenciamento de usuários, responsável pelos dados de cadastro e autenticação; o módulo de consultas, responsável por registrar e processar as solicitações de análise; o módulo de processamento de imagens, destinado à preparação das fotografias; e os módulos de integração com os modelos de inteligência artificial, responsáveis por auxiliar na identificação de plantas e na análise de possíveis doenças.
+
+O componente de persistência será responsável pela comunicação com o banco de dados PostgreSQL, enquanto o módulo de armazenamento e recuperação de imagens utilizará as referências das fotografias associadas às consultas.
+
+O projeto prevê o desenvolvimento dos componentes específicos da aplicação e o reaproveitamento de tecnologias e bibliotecas existentes, como PostgreSQL e ferramentas de processamento de imagens. Serviços externos e modelos de inteligência artificial serão utilizados conforme sua disponibilidade, compatibilidade e condições de uso.
 
 <p align="center">
-  <img src="./images/diagrama_componentes.png" alt="Diagrama de Contexto"><br>
-  Figura 4 – Diagrama de Componentes  (fonte: https://c4model.com/)
+  <img src="./images/diagrama_componentes.png" alt="Diagrama de Componentes do PlantAÍ"><br>
+  Figura 4: Diagrama de Componentes.
 </p>
-
-Escreva aqui uma breve explicação sobre o diagrama da Figura 4.
-
 
 ## 3.4 Nível 4: Código
 
-Aqui vocês devem apresentar cada componente para mostrar como ele é implementado como código; serve também para explicar a arquitetura. Pode-se utilizar um diagrama de classe UML, um diagrama de Entidade/Relacionamentos (figura 5), tabelas do banco de dados, estrutura de um JSON, estrutura de classes de código, etc. 
+No nível de código, a estrutura do banco de dados é representada por meio do diagrama entidade-relacionamento (ER), complementado pela definição das tabelas e de seus atributos. A modelagem contempla as entidades Usuário, Consulta e Foto_Consulta, responsáveis pelo gerenciamento dos usuários, pelo registro das análises e pelo armazenamento das referências às imagens utilizadas.
 
-Este modelo pode ser essencial caso a arquitetura utilize uma solução de banco de dados – SQL, distribuído ou NoSQL.
+A entidade Usuário contém os atributos identificador, nome, e-mail e senha. O identificador é a chave primária, enquanto o e-mail possui restrição de unicidade, evitando cadastros duplicados com o mesmo endereço.
+
+A entidade Consulta registra as análises realizadas, contendo identificador, nome da planta, descrição da análise, grau, possível doença, probabilidade, data e identificador do usuário responsável. O campo id_usuario é uma chave estrangeira que relaciona cada consulta ao usuário que a realizou.
+
+A entidade Foto_Consulta armazena o identificador da fotografia, a referência URI da imagem, a data de registro e o identificador da consulta associada. A chave estrangeira id_consulta estabelece o relacionamento entre as fotografias e as consultas, permitindo associar as imagens ao processo de análise correspondente.
+
+Dessa forma, um usuário pode realizar várias consultas, e cada consulta pode possuir uma ou mais fotografias associadas. A exclusão de uma consulta também remove as fotografias vinculadas a ela, conforme a regra ON DELETE CASCADE definida no banco de dados.
 
 <p align="center">
-  <img src="./images/diagrama_ER.png" alt="Diagrama de Entidade Relacionamento" width="600"> <br>
-  Figura 5 – Diagrama de Entidade Relacionamento (ER) - exemplo. (Fonte Prof. Pedro Alves)
+  <img src="./images/diagrama_ER.png" alt="Diagrama Entidade-Relacionamento do PlantAÍ" width="600"><br>
+  Figura 5: Diagrama Entidade-Relacionamento (ER) do PlantAÍ.
 </p>
-
-Acrescentem uma breve descrição sobre o diagrama apresentado na Figura 5, descrevendo as entidades que compõem o sistema.
