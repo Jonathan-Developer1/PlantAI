@@ -1,11 +1,22 @@
 # 4 Avaliação Crítica dos Resultados
 
-Apresentem de forma resumida os principais pontos positivos e negativos da arquitetura proposta. Adotem uma postura crítica que permita entender as limitações arquiteturais, incluindo os prós e contras das tecnologias. Vocês podem utilizar o formato textual ou produzir um quadro resumo, que é recomendável.
+A arquitetura proposta para o PlantAÍ apresenta vantagens relacionadas à modularidade, à separação de responsabilidades e à possibilidade de integração com diferentes tecnologias de inteligência artificial. A utilização de React Native e TypeScript permite desenvolver uma aplicação mobile multiplataforma, enquanto Node.js e Express oferecem uma estrutura flexível para o desenvolvimento do backend. O PostgreSQL, por sua vez, possibilita o armazenamento estruturado dos usuários, das consultas e das referências às imagens.
 
-**Exemplo de quadro resumo:**
+Entretanto, a solução também apresenta limitações. O processamento de imagens e a utilização de modelos de inteligência artificial podem exigir recursos computacionais elevados, aumentando o tempo de resposta e os custos de infraestrutura. Além disso, a precisão da identificação de doenças depende da qualidade das fotografias, da diversidade dos dados utilizados no treinamento e da capacidade dos modelos empregados. A integração entre diferentes ferramentas também pode aumentar a complexidade de desenvolvimento e manutenção do sistema.
 
-| Ponto avaliado    | Descrição                   |
-|-------------------|-----------------------------|
-| xxxxxxxxxxxxxxx   | xxxxxxxxxxxxxxxxxxxxxxx     |
-| ...               | ...                         |
-| ...               | ...                         |
+O quadro a seguir apresenta os principais pontos positivos e negativos da arquitetura proposta.
+
+| Ponto avaliado | Pontos positivos | Pontos negativos e limitações |
+|---|---|---|
+| **Arquitetura modular** | A separação entre aplicativo, backend, inteligência artificial e banco de dados facilita a manutenção e a evolução do sistema. | A integração entre os componentes exige planejamento, testes e gerenciamento adequado das dependências. |
+| **React Native e TypeScript** | Permitem desenvolver uma aplicação mobile para diferentes plataformas, com reaproveitamento de código e maior organização. | Podem exigir adaptações específicas para recursos nativos dos dispositivos e para o tratamento de imagens. |
+| **Node.js e Express** | Oferecem flexibilidade e facilitam a criação de APIs para comunicação entre o aplicativo, o banco de dados e os serviços de IA. | O processamento intensivo de imagens pode comprometer o desempenho se não for separado adequadamente do fluxo principal de requisições. |
+| **PostgreSQL** | Garante armazenamento estruturado, integridade referencial e relacionamentos consistentes entre usuários e consultas. | Exige configuração, manutenção, backups e medidas de segurança para proteger os dados armazenados. |
+| **Processamento de imagens com OpenCV** | Permite preparar e validar imagens antes da análise, contribuindo para melhorar a qualidade dos dados de entrada. | Não identifica doenças sozinho e pode exigir ajustes para lidar com variações de iluminação, enquadramento e qualidade das fotografias. |
+| **Modelos de inteligência artificial** | EfficientNetB4 e serviços como PlantNet podem contribuir para a classificação de imagens e a identificação de espécies vegetais. | A precisão depende dos dados, das condições das imagens e da compatibilidade dos modelos com as espécies e doenças consideradas. |
+| **Ollama e geração de explicações** | Pode permitir a utilização de modelos de linguagem para organizar informações e apresentar explicações acessíveis ao usuário. | As respostas podem conter informações incorretas ou tratamentos inadequados caso não sejam controladas por fontes confiáveis e regras de validação. |
+| **Armazenamento de imagens** | O uso de referências URI permite relacionar fotografias às consultas sem necessariamente armazenar os arquivos diretamente no banco de dados. | É necessário definir um serviço de armazenamento, controle de acesso, política de retenção e mecanismo de recuperação das imagens. |
+| **Escalabilidade e desempenho** | A separação dos componentes permite aprimorar ou substituir partes da solução conforme a demanda aumentar. | O processamento de IA pode demandar mais memória, processamento e infraestrutura, elevando os custos de operação. |
+| **Segurança e privacidade** | A utilização de autenticação e controle de acesso pode proteger os dados dos usuários e o histórico das consultas. | É necessário implementar proteção de senhas, autorização, validação das requisições e controle de acesso às fotografias. |
+
+Conclui-se que a arquitetura proposta é adequada para o desenvolvimento inicial do PlantAÍ, pois permite integrar tecnologias distintas e ampliar as funcionalidades gradualmente. Entretanto, sua eficácia dependerá da implementação correta dos componentes, da validação dos modelos de inteligência artificial e da realização de testes de desempenho e precisão. Como evolução, recomenda-se priorizar a segurança dos dados, o monitoramento dos resultados das análises e a validação das recomendações de prevenção e tratamento por fontes técnicas confiáveis, evitando apresentar resultados probabilísticos como diagnósticos definitivos.
