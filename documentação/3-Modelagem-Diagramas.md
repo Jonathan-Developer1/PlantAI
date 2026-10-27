@@ -5,8 +5,8 @@ A modelagem arquitetural do PlantAÍ foi definida utilizando o modelo C4, que pe
 Essa organização permite separar as responsabilidades do sistema, facilitando a manutenção, a integração entre os componentes e a evolução das funcionalidades de identificação de plantas e análise de possíveis doenças.
 
 <p align="center">
-  <img src="./images/solucao_geral.png" alt="Diagrama geral da arquitetura do PlantAÍ"><br>
-  Figura 1: Visão Geral da Solução (camadas).
+  <img src="imagem/figura1.jfif" alt="Diagrama geral da arquitetura do PlantAÍ"><br>
+  Figura 1: Visão Geral da Solução (camadas).[cite: 19]
 </p>
 
 ## 3.1 Nível 1: Diagrama de Contexto
@@ -16,8 +16,8 @@ O diagrama de contexto apresenta uma visão geral do PlantAÍ, destacando os usu
 O PlantAÍ atua como o sistema central, recebendo as solicitações dos usuários e disponibilizando os resultados das análises. Para auxiliar na identificação de espécies vegetais e na análise de possíveis doenças, a solução poderá integrar serviços externos de inteligência artificial, conforme a arquitetura definida para o projeto.
 
 <p align="center">
-  <img src="./images/diagrama_contexto.png" alt="Diagrama de Contexto do PlantAÍ"><br>
-  Figura 2: Diagrama de Contexto.
+  <img src="imagem/figura2.jfif" alt="Diagrama de Contexto do PlantAÍ"><br>
+  Figura 2: Diagrama de Contexto.[cite: 18]
 </p>
 
 ## 3.2 Nível 2: Diagrama de Contêiner
@@ -29,8 +29,8 @@ O aplicativo mobile será responsável pelo envio das imagens e pela apresentaç
 A arquitetura também prevê a integração com ferramentas de processamento de imagens e modelos de inteligência artificial para auxiliar na identificação das espécies vegetais e na detecção de possíveis doenças. Os componentes externos serão integrados conforme a implementação do projeto.
 
 <p align="center">
-  <img src="./images/diagrama_conteiner.png" alt="Diagrama de Contêiner do PlantAÍ"><br>
-  Figura 3: Diagrama de Contêiner.
+  <img src="imagem/figura3.jfif" alt="Diagrama de Contêiner do PlantAÍ"><br>
+  Figura 3: Diagrama de Contêiner.[cite: 17]
 </p>
 
 ## 3.3 Nível 3: Diagrama de Componentes
@@ -44,8 +44,8 @@ O componente de persistência será responsável pela comunicação com o banco 
 O projeto prevê o desenvolvimento dos componentes específicos da aplicação e o reaproveitamento de tecnologias e bibliotecas existentes, como PostgreSQL e ferramentas de processamento de imagens. Serviços externos e modelos de inteligência artificial serão utilizados conforme sua disponibilidade, compatibilidade e condições de uso.
 
 <p align="center">
-  <img src="./images/diagrama_componentes.png" alt="Diagrama de Componentes do PlantAÍ"><br>
-  Figura 4: Diagrama de Componentes.
+  <img src="imagem/figura4.jfif" alt="Diagrama de Componentes do PlantAÍ"><br>
+  Figura 4: Diagrama de Componentes.[cite: 16]
 </p>
 
 ## 3.4 Nível 4: Código
@@ -61,6 +61,6 @@ A entidade Foto_Consulta armazena o identificador da fotografia, a referência U
 Dessa forma, um usuário pode realizar várias consultas, e cada consulta pode possuir uma ou mais fotografias associadas. A exclusão de uma consulta também remove as fotografias vinculadas a ela, conforme a regra ON DELETE CASCADE definida no banco de dados.
 
 <p align="center">
-  <img src="./images/diagrama_ER.png" alt="Diagrama Entidade-Relacionamento do PlantAÍ" width="600"><br>
-  Figura 5: Diagrama Entidade-Relacionamento (ER) do PlantAÍ.
+  <img src="imagem/DER_3.jpg" alt="Diagrama Entidade-Relacionamento do PlantAÍ" width="600"><br>
+  Figura 5: Diagrama Entidade-Relacionamento (ER) do PlantAÍ.[cite: 15]
 </p>
