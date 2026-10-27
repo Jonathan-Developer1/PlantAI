@@ -1,9 +1,5 @@
 # 5 Conclusão
 
-Escrevam uma breve conclusão sobre o trabalho, mostrando os resultados obtidos, **na visão do cliente/parceiro**.
+O desenvolvimento do PlantAÍ permitiu estruturar uma proposta de solução para auxiliar agricultores e técnicos agrícolas na identificação de plantas e possíveis doenças por meio de imagens. A modelagem da arquitetura e do banco de dados estabeleceu uma base para o desenvolvimento do MVP, permitindo visualizar os principais componentes e suas responsabilidades.
 
-**É essencial registrar aqui o feedback recebido do cliente, na forma de texto, imagens, links para áudio ou vídeo, etc.**
-
-Não é necessário ter uma solução implantada ou 100% funcional, mas deve-se ter uma solução do tipo **Minimum Viable Product** (MVP).
-
-Obs: MVP é um novo produto ou parte dele, a ser utilizado para validar o atendimento às necessidades do cliente antes do desenvolvimento do produto completo/final.
+Na perspectiva do cliente/parceiro, a validação da solução deve considerar sua facilidade de uso, a utilidade dos resultados e a confiabilidade das análises. O feedback do cliente/parceiro deverá ser registrado nesta etapa para identificar melhorias e orientar a continuidade do projeto.
